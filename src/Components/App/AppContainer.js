@@ -1,7 +1,10 @@
 import {connect} from "react-redux";
 import App from "./index";
 
-export default connect((state) => {
-    console.log(state);
-    return state;
-})(App);
+const mapStateToProps =(state)=>({
+    url:state.url,
+    loading: state.loading,
+    error: state.error
+});
+
+export default connect(mapStateToProps)(App);
